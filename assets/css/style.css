@@ -1,0 +1,25 @@
+header{
+    text-align: center;
+    background-color: #0D6EFD;
+    padding: 20px 20px;
+}
+
+.textHeader{
+    color: rgb(255, 251, 251);
+}
+
+.btn{
+    height: 50px;
+}
+
+.content{
+    align-items: center;
+}
+
+.groupButton{
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    left: 20px;
+}

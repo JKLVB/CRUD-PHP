@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Formulário</title>
+    <script>
+      function funcAlert(){
+        var nome = formCadastro.nome.value;
+        var login = formCadastro.login.value;
+        var senha = formCadastro.senha.value;
+        var cpf = formCadastro.cpf.value;
+        var salario = formCadastro.salario.value;
+        var cargo = formCadastro.cargo.value;
+
+        if(nome == ""){
+          alert('O campo "Nome" é obrigatório');
+          formCadastro.nome.focus();
+          return false;
+        }
+        if(login == ""){
+          alert('O campo "Login" é obrigatório');
+          formCadastro.login.focus();
+          return false;
+        }
+        if(senha == ""){
+          alert('O campo "Senha" é obrigatório');
+          formCadastro.senha.focus();
+          return false;
+        }
+        if(cpf == ""){
+          alert('O campo "CPF" é obrigatório');
+          formCadastro.cpf.focus();
+          return false;
+        }
+        if(salario == ""){
+          alert('O campo "Salário" é obrigatório');
+          formCadastro.salario.focus();
+          return false;
+        }
+        if(cargo == ""){
+          alert('A opção de "Cargo" é obrigatório');
+          return false;
+        }
+      }
+    </script>
+</head>
+<body>
+    <section>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/MiniProject/index.html">Voltar</a></li>
+          </ol>
+        </nav>
+        <div class="container">
+            <h3 style="text-align:center; height: 70px; margin-top: 40px;">Formulário de Cadastro</h3>
+            <form id="formCadastro" name="formCadastro">
+                <div class="row mb-3">
+                    <label for="inputNome3" class="col-sm-1 col-form-label">Nome</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="nome" name="nome">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputLogin3" class="col-sm-1 col-form-label">Login</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="login" name="login" minlength="5" maxlength="15" size="15">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputSenha3" class="col-sm-1 col-form-label">Senha</label>
+                    <div class="col-sm-10">
+                      <input type="password" class="form-control" id="senha" name="senha" minlength="8" maxlength="8" size="8">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputCpf3" class="col-sm-1 col-form-label">CPF</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control" id="cpf" name="cpf" minlength="11" maxlength="11" size="11">
+                    </div>
+                  </div>
+                  <div class="row mb-3">
+                    <label for="inputSalario3" class="col-sm-1 col-form-label">Salário</label>
+                    <div class="col-sm-10">
+                      <input type="number" class="form-control" id="salario" name="salario">
+                    </div>
+                  </div>
+
+                <fieldset class="row mb-3">
+                    <legend class="col-form-label col-sm-1 pt-0">Cargo</legend>
+                    <div class="col-sm-10">
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cargo" id="analista" value="analista">
+                        <label class="form-check-label" for="gridRadios1">
+                            Analista de Sistemas
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="cargo" id="designer" value="designer">
+                        <label class="form-check-label" for="gridRadios2">
+                            Designer
+                        </label>
+                      </div>
+                      <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="cargo" id="diretor" value="diretor">
+                        <label class="form-check-label" for="gridRadios3">
+                            Diretor
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                <button type="submit" class="btn btn-primary" onclick="funcAlert()">Salvar</button>
+            </form>
+        </div>
+    </section>
+    <script src="/MiniProject/assets/js/JQuery/jquery-3.6.0.min.js"></script>
+    <script src="/MiniProject/assets/js/insert.js"></script>
+</body>
+</html>
