@@ -20,7 +20,17 @@ $('#formCadastro').submit(function(e){
         },
         dataType: 'json'
     }).done(function(result){
-        window.location.href="http://localhost:8080/MiniProject/lista/lista.php";
         console.log(result);
+        if(v_login == result[0].login){
+            alert("O login de usuário já está em uso");
+            formCadastro.login.focus();
+        }
+        else if(v_cpf == result[0].cpf){
+            alert("O CPF informado já está cadastrado");
+            formCadastro.cpf.focus();
+        }else {
+            alert("Usuário cadastrado com sucesso");
+            window.location.href="http://localhost:8080/MiniProject/lista/lista.php";
+        }
     });
 });

@@ -22,7 +22,7 @@
             $sql = "SELECT * FROM projeto.funcionario WHERE id = :id_funcionario";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':id_funcionario', $id);
-            $result = $stmt->execute();
+            $stmt->execute();
             $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
         ?>

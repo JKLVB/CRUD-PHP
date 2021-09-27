@@ -35,7 +35,7 @@
 
         include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
 
-        $sql = "SELECT * FROM projeto.funcionario ORDER BY id ASC" or die($pdo->error);
+        $sql = "SELECT * FROM projeto.funcionario ORDER BY id ASC";
         $result = $pdo->query($sql);
         $rows = $result->fetchall(PDO::FETCH_ASSOC);
 
@@ -50,72 +50,11 @@
         echo("<td>".$row["salario"]."</td>");
         echo("<td>".$row["cargo"]."</td>");
         echo("<td>".$row["bonificacao"]."</td>");
-        echo '<td><button class="btn btn-primary"><a href="lista.php?id_funcionario='.$row['id'].'" class="text-light">Bonificar</a></button></td>';
+        echo '<td><button class="btn btn-primary"><a href="/MiniProject/lista/bonificar/bonificar.php?id_funcionario='.$row['id'].'" class="text-light">Bonificar</a></button></td>';
         echo '<td><button class="btn btn-primary"><a href="/MiniProject/lista/update/alterar_salario.php?id_funcionario_update='.$row['id'].'" class="text-light">Alterar salário</a></button></td>';
-        echo '<td><button class="btn btn-danger"><a href="lista.php?id_funcionario_delete='.$row['id'].'" class="text-light">Deletar</a></button></td>';
-        
+        echo '<td><button class="btn btn-danger"><a href="/MiniProject/lista/delete/deletar.php?id_funcionario_delete='.$row['id'].'" class="text-light">Deletar</a></button></td>';
         echo "</tr>";
         } 
-    ?>
-
-    <?php
-
-        include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
-        
-        // Consultar por ID
-        if(isset($_GET["id_funcionario"])){
-
-          $id = $_GET["id_funcionario"];
-
-          $sql = "SELECT salario, cargo FROM projeto.funcionario WHERE id = :id" or die($pdo->error);
-          $stmt = $pdo->prepare($sql);
-          $stmt->bindParam(':id', $id);
-          $result = $stmt->execute();
-          $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-          // Bonificar funcionario
-          if($rows[0]['cargo'] == "analista"){
-
-            $sql_update = "UPDATE projeto.funcionario SET bonificacao = salario * 0.5 WHERE id = :id" or die($pdo->error);
-            $stmt_update = $pdo->prepare($sql_update);
-            $stmt_update->bindParam(':id', $id);
-            $result_update = $stmt_update->execute();
-            header('Location: lista.php');
-          }
-          if($rows[0]['cargo'] == "designer"){
-
-            $sql_update = "UPDATE projeto.funcionario SET bonificacao = salario * 0.3 WHERE id = :id" or die($pdo->error);
-            $stmt_update = $pdo->prepare($sql_update);
-            $stmt_update->bindParam(':id', $id);
-            $result_update = $stmt_update->execute();
-            header('Location: lista.php');
-          }
-          if($rows[0]['cargo'] == "diretor"){
-
-            $sql_update = "UPDATE projeto.funcionario SET bonificacao = salario * 0.7 WHERE id = :id" or die($pdo->error);
-            $stmt_update = $pdo->prepare($sql_update);
-            $stmt_update->bindParam(':id', $id);
-            $result_update = $stmt_update->execute();
-            header('Location: lista.php');
-          }
-        }
-    ?>
-
-    <?php
-
-    include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
-
-    // Deletar por ID
-    if(isset($_GET["id_funcionario_delete"])){
-
-      $id_deletar = $_GET["id_funcionario_delete"];
-
-      $sql_deletar = "DELETE FROM projeto.funcionario WHERE id = :id" or die($pdo->error);
-      $stmt_deletar = $pdo->prepare($sql_deletar);
-      $stmt_deletar->bindParam(':id', $id_deletar);
-      $result_deletar = $stmt_deletar->execute();
-      header('Location: lista.php');
-    }
     ?>
         </tbody>
        </table>

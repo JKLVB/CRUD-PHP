@@ -9,12 +9,13 @@ ALTER TABLE projeto.sq_funcionario
 GRANT ALL ON SEQUENCE projeto.sq_funcionario TO postgres;
 CREATE TABLE projeto.funcionario
 (
-  id integer NOT NULL DEFAULT nextval('projeto.sq_funcionario'::regclass),
-  nome varchar(50) NOT NULL,
-  login varchar(20) NOT NULL,
-  senha varchar(8) NOT NULL,
-  cpf varchar(11) NOT NULL,
-  salario real NOT NULL,
+  id INTEGER NOT NULL DEFAULT nextval('projeto.sq_funcionario'::regclass),
+  nome VARCHAR(50) NOT NULL,
+  login VARCHAR(15) NOT NULL,
+  senha VARCHAR(8) NOT NULL,
+  cpf BIGINT NOT NULL,
+  salario REAL NOT NULL,
+  bonificacao REAL DEFAULT NULL,
   CONSTRAINT pk_funcionario PRIMARY KEY (id),
   CONSTRAINT uk_funcionario_login UNIQUE (login),
   CONSTRAINT uk_funcionario_cpf UNIQUE (cpf)

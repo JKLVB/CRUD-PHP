@@ -8,7 +8,7 @@ $salario = $_POST['salario'];
 
 $id = $_POST['id'];
 
-$update = $pdo->prepare('UPDATE projeto.funcionario SET salario = :salario WHERE id = :id') or die($pdo->error);
+$update = $pdo->prepare('UPDATE projeto.funcionario SET salario = :salario WHERE id = :id');
 $update->bindValue(':salario', $salario);
 $update->bindValue(':id', $id);
 
