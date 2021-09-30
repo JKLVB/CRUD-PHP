@@ -8,32 +8,32 @@ function validacao(){
     var validarCpf = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
 
     if(nome == ""){
-        alert('O campo "Nome" não foi preenchido');
+        swal("Falha", "O preenchimento dos campos é obrigatório", "warning");
         formCadastro.nome.focus();
         return false;
     }
     if(login == ""){
-        alert('O campo "Login" não foi preenchido');
+        swal("Falha", "O preenchimento dos campos é obrigatório", "warning");
         formCadastro.login.focus();
         return false;
     }
     if(senha == ""){
-        alert('O campo "Senha" não foi preenchido');
+        swal("Falha", "O preenchimento dos campos é obrigatório", "warning");
         formCadastro.senha.focus();
         return false;
     }
     if(validarCpf.test(cpf) == false){
-        alert('CPF inválido');
+        swal("Falha", "O preenchimento dos campos é obrigatório", "warning");
         formCadastro.cpf.focus();
         return false;
     }
     if(salario == ""){
-        alert('O campo "Salário" não foi preenchido');
+        swal("Falha", "O preenchimento dos campos é obrigatório", "warning");
         formCadastro.salario.focus();
         return false;
     }
     if(cargo == ""){
-        alert('A opção de "Cargo" não foi preenchido');
+        swal("Falha", "O preenchimento dos campos é obrigatório", "warning");
         return false;
     }
 }

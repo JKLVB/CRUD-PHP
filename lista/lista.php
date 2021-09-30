@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <script src="/MiniProject/node_modules/sweetalert/dist/sweetalert.min.js"></script>
     <title>Usuários</title>
 </head>
 <body>
@@ -40,7 +41,7 @@
         $rows = $result->fetchall(PDO::FETCH_ASSOC);
 
         foreach($rows as $row) {
-        echo "<form action='' method='POST'>";
+        echo "<form>";
         echo "<tr class='table-light'>";
         echo("<td>".$row["id"]."</td>");
         echo("<td>".$row["nome"]."</td>");
@@ -50,13 +51,15 @@
         echo("<td>".$row["salario"]."</td>");
         echo("<td>".$row["cargo"]."</td>");
         echo("<td>".$row["bonificacao"]."</td>");
-        echo '<td><button class="btn btn-primary"><a href="/MiniProject/lista/bonificar/bonificar.php?id_funcionario='.$row['id'].'" class="text-light">Bonificar</a></button></td>';
-        echo '<td><button class="btn btn-primary"><a href="/MiniProject/lista/update/alterar_salario.php?id_funcionario_update='.$row['id'].'" class="text-light">Alterar salário</a></button></td>';
-        echo '<td><button class="btn btn-danger"><a href="/MiniProject/lista/delete/deletar.php?id_funcionario_delete='.$row['id'].'" class="text-light">Deletar</a></button></td>';
+        echo '<td><a class="btn btn-primary" href="/MiniProject/lista/bonificar/bonificar.php?id_funcionario='.$row['id'].'">Bonificar</a></td>';
+        echo '<td><a class="btn btn-primary" href="/MiniProject/lista/atualizar/alterar_salario.php?id_funcionario_update='.$row['id'].'">Alterar salário</a></td>';
+        echo '<td><button type="button" class="btn btn-danger delete-btn" data-id="'.$row['id'].'">Deletar</button></td>';
         echo "</tr>";
         } 
     ?>
         </tbody>
        </table>
+       <script src="/MiniProject/assets/js/JQuery/jquery-3.6.0.min.js"></script>
+       <script src="/MiniProject/assets/js/delete.js"></script>
 </body>
 </html>

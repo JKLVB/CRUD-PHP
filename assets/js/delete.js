@@ -1,0 +1,46 @@
+$(document).ready(function () {
+
+    $('.delete-btn').click(function (e) { 
+        e.preventDefault();
+    
+        let idUsuario = $(this).data('id')
+
+        swal({
+            title: "Deletar",
+            text: "O usuário cadastrado será excluído do banco de dados, deseja continuar?",
+            icon: "warning",
+            buttons: true,
+            dangerMode: true,
+          })
+          .then((willDelete) => {
+            if (willDelete) {
+
+                $.ajax({
+                    url: 'http://localhost:8080/MiniProject/lista/deletar/deletar.php',
+                    method: 'POST',
+                    data: {idUsuario: idUsuario},
+                    dataType: 'json'
+                }).done(function(result){
+                    console.log(result);
+
+                    if(result == true){
+                        swal("Usuário excluido com sucesso!", {
+                            icon: "success",
+                          });
+                        setTimeout(function () {
+                            window.location.href="http://localhost:8080/MiniProject/lista/lista.php";
+                        }, 1500);
+                    }else{
+                        swal("Erro ao excluir o usuário", {
+                            icon: "error",
+                          });
+                    }
+                });
+            } else {
+
+            }
+          });
+    
+        console.log(idUsuario)
+    });
+});

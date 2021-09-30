@@ -5,14 +5,19 @@ $('#formAtualizar').submit(function(e){
     const v_salario = $('#salario').val();
 
     $.ajax({
-        url: 'http://localhost:8080/MiniProject/lista/update/update.php',
+        url: 'http://localhost:8080/MiniProject/lista/atualizar/update.php',
         method: 'POST',
         data: {id: v_id,
             salario: v_salario
             },
         dataType: 'json'
     }).done(function(result){
-        window.location.href="http://localhost:8080/MiniProject/lista/lista.php";
+        swal("Salvo", "Salário atualizado com sucesso!", "success");
+
+            
+        setTimeout(function () {
+            window.location.href="http://localhost:8080/MiniProject/lista/lista.php";
+        }, 2000);
         console.log(result);
     });
 

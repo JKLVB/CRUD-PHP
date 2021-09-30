@@ -13,14 +13,24 @@ $cargo = $_POST['cargo'];
 
 // echo json_encode("$nome, $login, $senha, $cpf, $salario, $cargo");
 
-$consulta = $pdo->prepare('SELECT login, cpf FROM projeto.funcionario WHERE login = ? OR cpf = ?');
-$consulta->execute(array($login, $cpf));
+$consulta = $pdo->prepare('SELECT login FROM projeto.funcionario WHERE login = ?');
+$consulta->execute(array($login));
 $rows = $consulta->fetchAll(PDO::FETCH_ASSOC);
+$objLogin = $rows;
 
-if($rows){
-    echo json_encode($rows);
+if($objLogin){
+    echo json_encode($objLogin);
 }else{
-    $inserir = $pdo->prepare('INSERT INTO projeto.funcionario (nome, login, senha, cpf, salario, cargo) VALUES(?, ?, ?, ?, ?, ?)');
-    $inserir->execute(array($nome, $login, $senha, $cpf, $salario, $cargo));
-    echo json_encode(false);
+    $consulta = $pdo->prepare('SELECT cpf FROM projeto.funcionario WHERE cpf = ?');
+    $consulta->execute(array($cpf));
+    $rows = $consulta->fetchAll(PDO::FETCH_ASSOC);
+    $objCpf = $rows;
+
+    if($objCpf){
+        echo json_encode($objCpf);
+    }else{
+        $inserir = $pdo->prepare('INSERT INTO projeto.funcionario (nome, login, senha, cpf, salario, cargo) VALUES(?, ?, ?, ?, ?, ?)');
+        $inserir->execute(array($nome, $login, $senha, $cpf, $salario, $cargo));
+        echo json_encode(false);
+    }
 }
