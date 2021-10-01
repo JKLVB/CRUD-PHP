@@ -13,5 +13,5 @@ include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
   if($result_deletar){
     echo json_encode(true);
   }else{
-    echo json_encode(false);
+    echo json_encode(false );
   }

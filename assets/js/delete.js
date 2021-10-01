@@ -6,8 +6,8 @@ $(document).ready(function () {
         let idUsuario = $(this).data('id')
 
         swal({
-            title: "Deletar",
-            text: "O usuário cadastrado será excluído do banco de dados, deseja continuar?",
+            title: "Atenção!",
+            text: "O usuário cadastrado será excluído do banco de dados. Deseja continuar?",
             icon: "warning",
             buttons: true,
             dangerMode: true,
