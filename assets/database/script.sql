@@ -15,6 +15,7 @@ CREATE TABLE projeto.funcionario
   senha VARCHAR(8) NOT NULL,
   cpf BIGINT NOT NULL,
   salario REAL NOT NULL,
+  cargo VARCHAR(20) NOT NULL,
   bonificacao REAL DEFAULT NULL,
   CONSTRAINT pk_funcionario PRIMARY KEY (id),
   CONSTRAINT uk_funcionario_login UNIQUE (login),

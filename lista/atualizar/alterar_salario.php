@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/MiniProject/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <script src="/MiniProject/node_modules/sweetalert/dist/sweetalert.min.js"></script>
-    <title>Aumento de Salário</title>
+    <title>Alterar salário</title>
 </head>
 <body>
       <nav aria-label="breadcrumb">
@@ -15,7 +15,7 @@
         </ol>
       </nav>
     <?php    
-        include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
+        include '/Users/Alvaro/Documents/workspace/php/MiniProject/assets/database/conexao.php';
 
         if(isset($_GET['id_funcionario_update'])){
             $id = $_GET['id_funcionario_update'];
@@ -53,10 +53,10 @@
                       <input type="number" class="form-control" id="salario" name="salario" value="<?php echo($rows[0]["salario"])?>">
                     </div>
                   </div>
-                <button type="submit" class="btn btn-primary">Atualizar</button>
+                <button type="submit" class="btn btn-info">Atualizar</button>
             </form>
     </div>
     <script src="/MiniProject/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="/MiniProject/assets/js/update.js"></script>
+    <script src="/MiniProject/assets/js/atualizar.js"></script>
 </body>
 </html>

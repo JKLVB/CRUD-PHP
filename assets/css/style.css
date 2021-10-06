@@ -28,9 +28,34 @@ header{
     left: 20px;
 }
 
-body{
-    background-image: url(../img/background.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+
+
+
+
+
+.teste{
+    color: #fff;
+    background-color: #0d6efd!important;
+    display: inline-block;
+    text-decoration: none;
+}
+
+button.teste{
+    border: none;
+}
+
+.teste:hover{
+    color: #fff;
+}
+
+.teste + .teste{
+    margin-left: 10px;
+}
+
+.inline{
+    margin-top: 10px;
+}
+
+.red{
+    background-color: red!important;
 }
