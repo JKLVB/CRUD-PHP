@@ -15,7 +15,7 @@
         </ol>
       </nav>
     <?php    
-        include '/Users/Alvaro/Documents/workspace/php/MiniProject/assets/database/conexao.php';
+        include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
 
         if(isset($_GET['id_funcionario_update'])){
             $id = $_GET['id_funcionario_update'];
