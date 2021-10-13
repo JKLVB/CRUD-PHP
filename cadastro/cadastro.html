@@ -4,56 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <link href="/MiniProject/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <title>Formulário</title>
+
     <script src="/MiniProject/node_modules/sweetalert/dist/sweetalert.min.js"></script>
-    
-    <script src="/MiniProject/assets/js/validacao.js"></script>
+    <script src="/MiniProject/assets/js/jquery-3.6.0.min.js"></script>
+    <script type="module" src="/MiniProject/assets/js/inserir.js"></script>
+
+    <title>Formulário</title>
 </head>
 <body>
     <section>
-        <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><a href="/MiniProject/index.html">Voltar</a></li>
-          </ol>
-        </nav>
         <div class="container">
             <h3 style="text-align:center; height: 70px; margin-top: 40px;">Formulário de cadastro</h3>
             <form id="formCadastro" name="formCadastro">
-                <div class="row mb-3">
+                <div class="row mb-3" style="display: flex; justify-content: center;">
                     <label for="inputNome3" class="col-sm-1 col-form-label">Nome</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3">
                       <input type="text" pattern=".*\S+.*" class="form-control" id="nome" name="nome" placeholder="Insira seu nome" maxlength="35">
                     </div>
                   </div>
-                  <div class="row mb-3">
+                  <div class="row mb-3" style="display: flex; justify-content: center;">
                     <label for="inputLogin3" class="col-sm-1 col-form-label">Login</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3">
                       <input type="text" pattern="\S+" class="form-control" id="login" name="login" placeholder="exemplo.teste" maxlength="15">
                     </div>
                   </div>
-                  <div class="row mb-3">
+                  <div class="row mb-3" style="display: flex; justify-content: center;">
                     <label for="inputSenha3" class="col-sm-1 col-form-label">Senha</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3">
                       <input type="password" class="form-control" id="senha" name="senha" placeholder="Senha com 8 dígitos" minlength="8" maxlength="8">
                     </div>
                   </div>
-                  <div class="row mb-3">
+                  <div class="row mb-3" style="display: flex; justify-content: center;">
                     <label for="inputCpf3" class="col-sm-1 col-form-label">CPF</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3">
                       <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Apenas números" minlength="11" maxlength="11">
                     </div>
                   </div>
-                  <div class="row mb-3">
+                  <div class="row mb-3" style="display: flex; justify-content: center;">
                     <label for="inputSalario3" class="col-sm-1 col-form-label">Salário</label>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3">
                       <input type="number" class="form-control" id="salario" name="salario" placeholder="Apenas números">
                     </div>
                   </div>
 
-                <fieldset class="row mb-3">
+                <fieldset class="row mb-3" style="display: flex; justify-content: center;">
                     <legend class="col-form-label col-sm-1 pt-0">Cargo</legend>
-                    <div class="col-sm-10">
+                    <div class="col-sm-3">
                       <div class="form-check">
                         <input class="form-check-input" type="radio" name="cargo" id="analista" value="analista">
                         <label class="form-check-label" for="gridRadios1">
@@ -74,11 +72,12 @@
                       </div>
                     </div>
                   </fieldset>
-                <button type="submit" class="btn btn-info" onclick="validacao()">Salvar</button>
+                  <div class="groupButton">
+                    <a class="btn btn-info" href="/MiniProject/index.html" style=" margin-left: 35%;">Voltar</a>
+                    <button type="submit" class="btn btn-info" style="margin-left: 20%;">Salvar</button>
+                  </div>
             </form>
         </div>
     </section>
-    <script src="/MiniProject/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="/MiniProject/assets/js/inserir.js"></script>
 </body>
 </html>

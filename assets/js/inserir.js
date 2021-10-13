@@ -1,3 +1,5 @@
+import {validacao as validar} from './validacao.js';
+
 $('#formCadastro').submit(function(e){
     e.preventDefault();
 
@@ -8,7 +10,8 @@ $('#formCadastro').submit(function(e){
     const salario = $('#salario').val();
     const cargo = $('input[name="cargo"]:checked').val();
 
-    console.log("teste");
+    //method imported ./validacao.js
+    validar(nome, login, senha, cpf, salario, cargo);
 
     $.ajax({
         url: 'http://localhost:8080/MiniProject/cadastro/cadastro.php',

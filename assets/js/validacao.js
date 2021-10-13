@@ -1,10 +1,5 @@
-function validacao(){
-    var nome = formCadastro.nome.value;
-    var login = formCadastro.login.value;
-    var senha = formCadastro.senha.value;
-    var cpf = formCadastro.cpf.value;
-    var salario = formCadastro.salario.value;
-    var cargo = formCadastro.cargo.value;
+export function validacao(nome, login, senha, cpf, salario, cargo){
+   
     var validarCpf = /^(([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11}))$/;
 
     if(nome == ""){
