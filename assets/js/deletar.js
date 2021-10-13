@@ -1,4 +1,4 @@
-$(document).ready(function () {
+function deletar() {
 
     $('.delete-btn').click(function (e) { 
         e.preventDefault();
@@ -41,4 +41,4 @@ $(document).ready(function () {
             }
           });
     });
-});
+};

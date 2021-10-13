@@ -37,7 +37,7 @@
                   
                   var bonificar = '<a class="btn btn-info" href="/MiniProject/lista/bonificar/bonificar.php?id_funcionario='+data+'">Bonificar</a>';
                   var altSalario = '<a class="btn btn-info" href="/MiniProject/lista/atualizar/alterar_salario.php?id_funcionario_update='+data+'">Alterar salário</a>';
-                  var deletar = '<button type="button" class="btn btn-danger delete-btn" data-id='+data+'>Deletar</button>';
+                  var deletar = '<a class="btn btn-danger delete-btn" onClick="javascript:deletar();" data-id='+data+'>Deletar</a>';
                   return bonificar + altSalario + deletar;
               }
             }
