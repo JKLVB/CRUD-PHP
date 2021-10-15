@@ -10,7 +10,13 @@ header{
     color: #000000;
 }
 
-.btn{
+.teste{
+    -webkit-box-shadow: 2px 6px 10px -1px #000000; 
+    box-shadow: 2px 6px 10px -1px #000000;
+    height: 40px;
+}
+
+.teste-lg{
     -webkit-box-shadow: 2px 6px 10px -1px #000000; 
     box-shadow: 2px 6px 10px -1px #000000;
     height: 50px;
