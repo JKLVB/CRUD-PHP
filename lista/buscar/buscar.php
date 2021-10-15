@@ -1,6 +1,6 @@
 <?php
 
-include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
+include '/opt/lampp/htdocs/CRUD-PHP/assets/database/conexao.php';
 
 $sql = "SELECT * FROM projeto.funcionario ORDER BY id ASC";
 $result = $pdo->query($sql);

@@ -1,6 +1,6 @@
 <?php
 
-include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
+include '/opt/lampp/htdocs/CRUD-PHP/assets/database/conexao.php';
 
 // Consultar por ID
 if(isset($_GET["id_funcionario"])){
@@ -20,7 +20,7 @@ if(isset($_GET["id_funcionario"])){
     $stmt_update = $pdo->prepare($sql_update);
     $stmt_update->bindParam(':id', $id);
     $result_update = $stmt_update->execute();
-    header('Location: /MiniProject/lista/lista.php');
+    header('Location: /CRUD-PHP/lista/lista.php');
     }
     if($rows[0]['cargo'] == "designer"){
 
@@ -28,7 +28,7 @@ if(isset($_GET["id_funcionario"])){
     $stmt_update = $pdo->prepare($sql_update);
     $stmt_update->bindParam(':id', $id);
     $result_update = $stmt_update->execute();
-    header('Location: /MiniProject/lista/lista.php');
+    header('Location: /CRUD-PHP/lista/lista.php');
     }
     if($rows[0]['cargo'] == "diretor"){
 
@@ -36,6 +36,6 @@ if(isset($_GET["id_funcionario"])){
     $stmt_update = $pdo->prepare($sql_update);
     $stmt_update->bindParam(':id', $id);
     $result_update = $stmt_update->execute();
-    header('Location: /MiniProject/lista/lista.php');
+    header('Location: /CRUD-PHP/lista/lista.php');
     }
 }

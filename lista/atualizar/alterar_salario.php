@@ -5,16 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link href="/MiniProject/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="/CRUD-PHP/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" media="screen"/>
     
-    <script src="/MiniProject/node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="/CRUD-PHP/node_modules/sweetalert/dist/sweetalert.min.js"></script>
     
     <title>Alterar salário</title>
 </head>
 <body>
     <?php    
-        include '/opt/lampp/htdocs/MiniProject/assets/database/conexao.php';
+        include '/opt/lampp/htdocs/CRUD-PHP/assets/database/conexao.php';
 
         if(isset($_GET['id_funcionario_update'])){
             $id = $_GET['id_funcionario_update'];
@@ -54,13 +54,13 @@
                   </div>
                   <div style="width: 100%;  display: flex; justify-content: center;">
                     <div class="groupButton" style="display: flex; justify-content: space-between; width: 450px">
-                      <a class="btn btn-info teste" href="/MiniProject/lista/lista.php">Voltar</a>
+                      <a class="btn btn-info teste" href="/CRUD-PHP/lista/lista.php">Voltar</a>
                       <button type="submit" class="btn btn-info teste">Atualizar</button>
                     </div>
                   </div>
             </form>
     </div>
-    <script src="/MiniProject/assets/js/jquery-3.6.0.min.js"></script>
-    <script src="/MiniProject/assets/js/atualizar.js"></script>
+    <script src="/CRUD-PHP/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/CRUD-PHP/assets/js/atualizar.js"></script>
 </body>
 </html>

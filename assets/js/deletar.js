@@ -16,7 +16,7 @@ function deletar() {
             if (willDelete) {
 
                 $.ajax({
-                    url: 'http://localhost:8080/MiniProject/lista/deletar/deletar.php',
+                    url: 'http://localhost:8080/CRUD-PHP/lista/deletar/deletar.php',
                     method: 'POST',
                     data: {idUsuario: idUsuario},
                     dataType: 'json'
@@ -28,7 +28,7 @@ function deletar() {
                             icon: "success",
                           });
                         setTimeout(function () {
-                            window.location.href="http://localhost:8080/MiniProject/lista/lista.php";
+                            window.location.href="http://localhost:8080/CRUD-PHP/lista/lista.php";
                         }, 1500);
                     }else{
                         swal("Erro ao excluir o usuário", {
