@@ -1,6 +1,6 @@
 <?php
 
-include '/opt/lampp/htdocs/CRUD-PHP/assets/database/conexao.php';
+include '../../assets/database/conexao.php';
 
 // Deletar por ID
 

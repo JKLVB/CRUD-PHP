@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link href="/CRUD-PHP/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="/CRUD-PHP/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../../assets/css/style.css" media="screen"/>
     
     <script src="/CRUD-PHP/node_modules/sweetalert/dist/sweetalert.min.js"></script>
@@ -14,7 +14,7 @@
 </head>
 <body>
     <?php    
-        include '/opt/lampp/htdocs/CRUD-PHP/assets/database/conexao.php';
+        include '../../assets/database/conexao.php';
 
         if(isset($_GET['id_funcionario_update'])){
             $id = $_GET['id_funcionario_update'];
