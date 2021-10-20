@@ -5,7 +5,7 @@ $('#formAtualizar').submit(function(e){
     const v_salario = $('#salario').val();
 
     $.ajax({
-        url: 'http://localhost:8080/CRUD-PHP/lista/atualizar/atualizar.php',
+        url: '/CRUD-PHP/lista/atualizar/atualizar.php',
         method: 'POST',
         data: {id: v_id,
             salario: v_salario
@@ -14,7 +14,7 @@ $('#formAtualizar').submit(function(e){
     }).done(function(result){
         swal("Salvo", "Salário atualizado com sucesso!", "success");
         setTimeout(function () {
-            window.location.href="http://localhost:8080/CRUD-PHP/lista/lista.php";
+            window.location.href="/CRUD-PHP/lista/lista.php";
         }, 2000);
         console.log(result);
     });

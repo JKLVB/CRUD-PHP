@@ -14,7 +14,7 @@ $('#formCadastro').submit(function(e){
     validar(nome, login, senha, cpf, salario, cargo);
 
     $.ajax({
-        url: 'http://localhost:8080/CRUD-PHP/cadastro/cadastro.php',
+        url: '/CRUD-PHP/cadastro/cadastro.php',
         method: 'POST',
         data: {nome: nome,
             login: login,
@@ -43,7 +43,7 @@ $('#formCadastro').submit(function(e){
 
             
             setTimeout(function () {
-                window.location.href="http://localhost:8080/CRUD-PHP/lista/lista.php";
+                window.location.href="/CRUD-PHP/lista/lista.php";
             }, 2000);
         }
     });

@@ -20,7 +20,7 @@
           "processing": true,
           "serverSide": true,
           "ajax": {
-              "url": "http://localhost:8080/CRUD-PHP/lista/buscar/buscar.php",
+              "url": "/CRUD-PHP/lista/buscar/buscar.php",
               "type": "GET"
           },
           "columns": [
